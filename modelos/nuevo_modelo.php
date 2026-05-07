@@ -68,11 +68,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 include('../includes/header.php');
 include('../includes/sidebar.php');
-
-echo "<pre>";
-var_dump($_FILES['txtImagen']);
-echo "</pre>";
-exit;
 ?>
 
 <div class="main">
