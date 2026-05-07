@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($imagen && $imagen['error'] == 0) {
 
         $nombreImagen = time() . "_" . basename($imagen['name']);
-        $rutaDestino = __DIR__ . "/../image/" . $nombreImagen;
+        $rutaDestino = __DIR__ . "/image/" . $nombreImagen;
 
         if (!move_uploaded_file($imagen['tmp_name'], $rutaDestino)) {
             die("Error al subir la imagen");
