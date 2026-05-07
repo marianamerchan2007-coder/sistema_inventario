@@ -67,7 +67,6 @@ try {
     $stmt->execute([$origen['id_talla'], $origen['id_modelo']]);
     $info = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    session_start();
 
     $_SESSION['success'] = "Esperando confirmación de la transferencia: Modelo "
         . $info['nombre_modelo'] . 
