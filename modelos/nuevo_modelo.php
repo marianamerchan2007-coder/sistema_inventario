@@ -16,21 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($imagen && $imagen['error'] == 0) {
 
-        // 🔥 carpeta real
-        $carpeta = __DIR__ . "/image/";
+        $nombreImagen = time() . "_" . basename($imagen['name']);
 
-        // crear carpeta si no existe
-        if (!file_exists($carpeta)) {
-            mkdir($carpeta, 0777, true);
-        }
+        $carpeta = "/tmp/";
 
-        // nombre único
-        $nombreImagen = time() . "_" . preg_replace('/\s+/', '_', basename($imagen['name']));
-
-        // ruta final
         $rutaDestino = $carpeta . $nombreImagen;
 
-        // mover imagen
         if (!move_uploaded_file($imagen['tmp_name'], $rutaDestino)) {
 
             echo "<pre>";
