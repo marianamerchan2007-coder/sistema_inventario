@@ -12,18 +12,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $nombreImagen = "";
 
+    $nombreImagen = "";
+
     if ($imagen && $imagen['error'] == 0) {
 
-        $nombreImagen = time() . "_" . basename($imagen['name']);
+        // 🔥 carpeta real
+        $carpeta = __DIR__ . "/image/";
 
-        if (!is_dir($carpeta)) {
+        // crear carpeta si no existe
+        if (!file_exists($carpeta)) {
             mkdir($carpeta, 0777, true);
         }
 
+        // nombre único
+        $nombreImagen = time() . "_" . preg_replace('/\s+/', '_', basename($imagen['name']));
+
+        // ruta final
         $rutaDestino = $carpeta . $nombreImagen;
 
+        // mover imagen
         if (!move_uploaded_file($imagen['tmp_name'], $rutaDestino)) {
-            die("No se pudo subir la imagen");
+
+            echo "<pre>";
+            print_r(error_get_last());
+            echo "</pre>";
+
+            die("❌ No se pudo subir la imagen");
         }
     }
 
