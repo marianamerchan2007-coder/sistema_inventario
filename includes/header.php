@@ -20,7 +20,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-
+    <link rel="icon" type="/image/png" href="/image/logo.jpg">
     <link rel="stylesheet" href="/style.css?v=3">
 </head>
 
