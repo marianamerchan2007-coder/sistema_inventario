@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($imagen && $imagen['error'] == 0) {
         $nombreImagen = time() . "_" . $imagen['name'];
-        move_uploaded_file($imagen['tmp_name'], __DIR__ . "/../image/" . $nombreImagen);
+        move_uploaded_file($imagen['tmp_name'], __DIR__ . "/image/" . $nombreImagen);
     }
 
     try {
