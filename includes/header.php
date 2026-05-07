@@ -13,14 +13,13 @@ if (session_status() === PHP_SESSION_NONE) {
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    
+    <link rel="icon" type="image/jpeg" href="/image/logo.jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="/image/png" href="/image/logo.jpg">
     <link rel="stylesheet" href="/style.css?v=3">
 </head>
 
