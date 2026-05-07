@@ -13,13 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombreImagen = "";
 
     if ($imagen && $imagen['error'] == 0) {
-
-        $nombreImagen = time() . "_" . basename($imagen['name']);
-        $rutaDestino = __DIR__ . "/image/" . $nombreImagen;
-
-        if (!move_uploaded_file($imagen['tmp_name'], $rutaDestino)) {
-            die("No se pudo subir la imagen");
-        }
+        $nombreImagen = time() . "_" . $imagen['name'];
+        move_uploaded_file($imagen['tmp_name'], __DIR__ . "/../image/" . $nombreImagen);
     }
 
     try {
