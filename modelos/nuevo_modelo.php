@@ -16,7 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $nombreImagen = time() . "_" . basename($imagen['name']);
 
-        $carpeta = "/tmp/";
+        if (!is_dir($carpeta)) {
+            mkdir($carpeta, 0777, true);
+        }
 
         $rutaDestino = $carpeta . $nombreImagen;
 
