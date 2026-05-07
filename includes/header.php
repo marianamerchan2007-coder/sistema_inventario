@@ -35,7 +35,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
         <div class="right user-info" onclick="toggleMenu()">
 
-            <img src="/calzado_bernal/image/usuarios/<?= $_SESSION['foto'] ?? 'default.png' ?>" class="user-img">
+            <img src="/image/usuarios/<?= $_SESSION['foto'] ?? 'default.png' ?>" class="user-img">
 
             <div class="user-text">
                 <span class="user-name"><?= $_SESSION['nombre'] ?></span>
@@ -45,7 +45,7 @@ if (session_status() === PHP_SESSION_NONE) {
             </div>
 
             <div class="user-menu" id="userMenu">
-                <a href="/calzado_bernal/login/logout.php">
+                <a href="/login/logout.php">
                     <i class="bi bi-box-arrow-right"></i> Cerrar sesión
                 </a>
             </div>

@@ -14,7 +14,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <aside id="sidebar">
         <div class="d-flex align-items-center gap-5 mb-3">
             <div class="sidebar-logo">
-                <a href="/calzado_bernal/dashboard/index.php">Calzado Bernal</a>
+                <a href="/dashboard/index.php">Calzado Bernal</a>
             </div>
 
             <button id="btn-close-sidebar" class="btn-close-sidebar d-lg-none">
@@ -26,7 +26,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <ul class="sidebar-nav">
            
             <li class="sidebar-item">
-                <a href="/calzado_bernal/dashboard/index.php" class="sidebar-link" data-title="Dashboard">
+                <a href="/dashboard/index.php" class="sidebar-link" data-title="Dashboard">
                     <i class="bi bi-bar-chart-line"></i>
                     <span>Dashboard</span>
                 </a>
@@ -34,7 +34,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
             <?php if ($_SESSION['rol'] == 1): ?>
                 <li class="sidebar-item">
-                    <a href="/calzado_bernal/modelos/index.php" class="sidebar-link" data-title="Modelos">
+                    <a href="/modelos/index.php" class="sidebar-link" data-title="Modelos">
                         <i class="bi bi-tag"></i>
                         <span>Modelos</span>
                     </a>
@@ -42,14 +42,14 @@ if (session_status() === PHP_SESSION_NONE) {
             <?php endif; ?>
 
             <li class="sidebar-item">
-                <a href="/calzado_bernal/inventario/index.php" class="sidebar-link" data-title="Inventario">
+                <a href="/inventario/index.php" class="sidebar-link" data-title="Inventario">
                     <i class="bi bi-box-seam"></i>
                     <span>Inventario</span>
                 </a>
             </li>
 
             <li class="sidebar-item">
-                <a href="/calzado_bernal/ventas/index.php" class="sidebar-link" data-title="Ventas">
+                <a href="/ventas/index.php" class="sidebar-link" data-title="Ventas">
                     <i class="bi bi-cash-stack"></i>
                     <span>Ventas</span>
                 </a>
@@ -71,7 +71,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 <ul id="transferencias" class="sidebar-dropdown list-unstyled collapse">
                     <?php if ($_SESSION['rol'] == 2 && $_SESSION['sucursal'] == 2): ?>
                         <li class="sidebar-item">
-                            <a href="/calzado_bernal/transferencias/transferencias_pendientes.php" class="sidebar-link" data-title="Pendientes">
+                            <a href="/transferencias/transferencias_pendientes.php" class="sidebar-link" data-title="Pendientes">
                                 Pendientes 
                                 <?php if ($totalPendientes > 0): ?>
                                     <span class="badge bg-danger ms-2"><?= $totalPendientes ?></span>
@@ -82,7 +82,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
                     <?php if ($_SESSION['rol'] == 1): ?>
                         <li class="sidebar-item">
-                            <a href="/calzado_bernal/transferencias/index.php" class="sidebar-link" data-title="Confirmadas">
+                            <a href="/transferencias/index.php" class="sidebar-link" data-title="Confirmadas">
                                 Confirmadas
                             </a>
                         </li>
@@ -102,16 +102,16 @@ if (session_status() === PHP_SESSION_NONE) {
                     </a>
 
                     <ul id="reportes" class="sidebar-dropdown list-unstyled collapse">
-                        <li class="sidebar-item"><a href="/calzado_bernal/reportes/inventario.php" class="sidebar-link" data-title="Inventario">Inventario</a></li>
-                        <li class="sidebar-item"><a href="/calzado_bernal/reportes/ventas.php" class="sidebar-link" data-title="Ventas">Ventas</a></li>
-                        <li class="sidebar-item"><a href="/calzado_bernal/reportes/transferencias.php" class="sidebar-link" data-title="Transferencias">Transferencias</a></li>
+                        <li class="sidebar-item"><a href="/reportes/inventario.php" class="sidebar-link" data-title="Inventario">Inventario</a></li>
+                        <li class="sidebar-item"><a href="/reportes/ventas.php" class="sidebar-link" data-title="Ventas">Ventas</a></li>
+                        <li class="sidebar-item"><a href="/reportes/transferencias.php" class="sidebar-link" data-title="Transferencias">Transferencias</a></li>
                     </ul>
                 </li>
             <?php endif; ?>
         </ul>
 
         <div class="sidebar-footer">
-            <a href="/calzado_bernal/login/logout.php" class="sidebar-link" data-title="Salir">
+            <a href="/login/logout.php" class="sidebar-link" data-title="Salir">
                 <i class="bi bi-box-arrow-left"></i>
                 <span>Salir</span>
             </a>
