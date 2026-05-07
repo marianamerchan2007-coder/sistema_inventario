@@ -13,8 +13,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombreImagen = "";
 
     if ($imagen && $imagen['error'] == 0) {
-        $nombreImagen = time() . "_" . $imagen['name'];
-        move_uploaded_file($imagen['tmp_name'], __DIR__ . "/image/" . $nombreImagen);
+
+        $nombreImagen = time() . "_" . basename($imagen['name']);
+
+        $carpeta = __DIR__ . "/../image/";
+
+        // Crear carpeta si no existe
+        if (!is_dir($carpeta)) {
+            mkdir($carpeta, 0777, true);
+        }
+
+        $rutaDestino = $carpeta . $nombreImagen;
+
+        if (!move_uploaded_file($imagen['tmp_name'], $rutaDestino)) {
+            die("No se pudo subir la imagen");
+        }
     }
 
     try {
