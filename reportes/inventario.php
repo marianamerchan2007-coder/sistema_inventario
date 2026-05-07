@@ -129,58 +129,58 @@ $registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 </div>
 
-            <?php endif; ?>
-
-            <div class="table-responsive mt-3 d-none d-md-block">
-                <table class="table table-bordered table-hover text-center">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Modelo</th>
-                            <th>Talla</th>
-                            <th>Cantidad</th>
-                            <th>Sucursal</th>
-                            <th>Fecha ingreso</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <?php foreach($registros as $r): ?>
+            <?php else: ?>
+                <div class="table-responsive mt-3 d-none d-md-block">
+                    <table class="table table-bordered table-hover text-center">
+                        <thead class="table-light">
                             <tr>
-                                <td><?= $r['nombre_modelo'] ?></td>
-                                <td><?= $r['numero_talla'] ?></td>
-                                <td><?= $r['cantidad_disponible'] ?></td>
-                                <td><?= $r['nombre_sucursal'] ?></td>
-                                <td><?= date("d/m/Y", strtotime($r['fecha_ingreso'])) ?></td>
+                                <th>Modelo</th>
+                                <th>Talla</th>
+                                <th>Cantidad</th>
+                                <th>Sucursal</th>
+                                <th>Fecha ingreso</th>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
+                        </thead>
 
-            <div class="d-md-none mt-3">
-                <?php foreach($registros as $r): ?>
+                        <tbody>
+                            <?php foreach($registros as $r): ?>
+                                <tr>
+                                    <td><?= $r['nombre_modelo'] ?></td>
+                                    <td><?= $r['numero_talla'] ?></td>
+                                    <td><?= $r['cantidad_disponible'] ?></td>
+                                    <td><?= $r['nombre_sucursal'] ?></td>
+                                    <td><?= date("d/m/Y", strtotime($r['fecha_ingreso'])) ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
 
-                    <div class="reporte-card">
+                <div class="d-md-none mt-3">
+                    <?php foreach($registros as $r): ?>
 
-                        <!-- HEADER -->
-                        <div class="reporte-header">
-                            <h6><?= $r['nombre_modelo'] ?></h6>
-                            <span class="reporte-cantidad">
-                                <?= $r['cantidad_disponible'] ?>
-                            </span>
+                        <div class="reporte-card">
+
+                            <!-- HEADER -->
+                            <div class="reporte-header">
+                                <h6><?= $r['nombre_modelo'] ?></h6>
+                                <span class="reporte-cantidad">
+                                    <?= $r['cantidad_disponible'] ?>
+                                </span>
+                            </div>
+
+                            <!-- INFO -->
+                            <div class="reporte-info">
+                                <span><strong>Talla:</strong> <?= $r['numero_talla'] ?></span>
+                                <span><?= $r['nombre_sucursal'] ?></span>
+                                <span><?= date("d/m/Y", strtotime($r['fecha_ingreso'])) ?></span>
+                            </div>
+
                         </div>
 
-                        <!-- INFO -->
-                        <div class="reporte-info">
-                            <span><strong>Talla:</strong> <?= $r['numero_talla'] ?></span>
-                            <span><?= $r['nombre_sucursal'] ?></span>
-                            <span><?= date("d/m/Y", strtotime($r['fecha_ingreso'])) ?></span>
-                        </div>
-
-                    </div>
-
-                <?php endforeach; ?>
-            </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 

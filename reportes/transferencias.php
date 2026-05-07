@@ -128,55 +128,56 @@ $registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <?php endif; ?>
                 </div>
 
-            <?php endif; ?>
-            <div class="table-responsive mt-3 d-none d-md-block">
-                <table class="table table-bordered table-hover text-center">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Modelo</th>
-                            <th>Talla</th>
-                            <th>Cantidad</th>
-                            <th>Fecha transferencia</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <?php foreach($registros as $r): ?>
+            <?php else: ?>
+                <div class="table-responsive mt-3 d-none d-md-block">
+                    <table class="table table-bordered table-hover text-center">
+                        <thead class="table-light">
                             <tr>
-                                <td><?= $r['nombre_modelo'] ?></td>
-                                <td><?= $r['numero_talla'] ?></td>
-                                <td><?= $r['cantidad'] ?></td>
-                                <td><?= date("d/m/Y", strtotime($r['fecha_transferencia'])) ?></td>
+                                <th>Modelo</th>
+                                <th>Talla</th>
+                                <th>Cantidad</th>
+                                <th>Fecha transferencia</th>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
+                        </thead>
 
-            <div class="d-md-none mt-3">
-                <?php foreach($registros as $r): ?>
+                        <tbody>
+                            <?php foreach($registros as $r): ?>
+                                <tr>
+                                    <td><?= $r['nombre_modelo'] ?></td>
+                                    <td><?= $r['numero_talla'] ?></td>
+                                    <td><?= $r['cantidad'] ?></td>
+                                    <td><?= date("d/m/Y", strtotime($r['fecha_transferencia'])) ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
 
-                    <div class="reporte-card">
+                <div class="d-md-none mt-3">
+                    <?php foreach($registros as $r): ?>
 
-                        <!-- HEADER -->
-                        <div class="reporte-header">
-                            <h6><?= $r['nombre_modelo'] ?></h6>
+                        <div class="reporte-card">
 
-                            <span class="reporte-cantidad">
-                                <?= $r['cantidad'] ?>
-                            </span>
+                            <!-- HEADER -->
+                            <div class="reporte-header">
+                                <h6><?= $r['nombre_modelo'] ?></h6>
+
+                                <span class="reporte-cantidad">
+                                    <?= $r['cantidad'] ?>
+                                </span>
+                            </div>
+
+                            <!-- INFO -->
+                            <div class="reporte-info">
+                                <span><strong>Talla:</strong> <?= $r['numero_talla'] ?></span>
+                                <span><?= date("d/m/Y", strtotime($r['fecha_transferencia'])) ?></span>
+                            </div>
+
                         </div>
 
-                        <!-- INFO -->
-                        <div class="reporte-info">
-                            <span><strong>Talla:</strong> <?= $r['numero_talla'] ?></span>
-                            <span><?= date("d/m/Y", strtotime($r['fecha_transferencia'])) ?></span>
-                        </div>
-
-                    </div>
-
-                <?php endforeach; ?>
-            </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 
