@@ -16,12 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $nombreImagen = time() . "_" . basename($imagen['name']);
 
-        $carpeta = __DIR__ . "/../image/";
-
-        // Crear carpeta si no existe
-        if (!is_dir($carpeta)) {
-            mkdir($carpeta, 0777, true);
-        }
+        $carpeta = "/tmp/";
 
         $rutaDestino = $carpeta . $nombreImagen;
 
