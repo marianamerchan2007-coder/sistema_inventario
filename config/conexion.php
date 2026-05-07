@@ -1,11 +1,11 @@
 <?php
 date_default_timezone_set('America/Bogota');
 
-$host = "mysql-f5210-marianamerchan2007-8a29.g.aivencloud.com";
-$port = "21591";
-$dbname = "defaultdb";
-$user = "avnadmin";
-$password = "";
+$host = getenv("DB_HOST");
+$port = getenv("DB_PORT");
+$dbname = getenv("DB_NAME");
+$user = getenv("DB_USER");
+$password = getenv("DB_PASSWORD");
 
 try {
 
