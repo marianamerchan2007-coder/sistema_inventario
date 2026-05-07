@@ -202,33 +202,46 @@ if (window.location.search.includes("qr=") || window.location.search.includes("r
 </script>
 
 <script src="https://unpkg.com/html5-qrcode"></script>
+
 <script>
-    function iniciarScanner() {
+function iniciarScanner() {
 
     const html5QrCode = new Html5Qrcode("reader");
 
     Html5Qrcode.getCameras().then(devices => {
 
-        if (devices && devices.length) {
-
-            const cameraId = devices[0].id; // 🔥 usa la primera
-
-            html5QrCode.start(
-                cameraId,
-                { fps: 10, qrbox: 250 },
-
-                (decodedText) => {
-
-                    document.querySelector("input[name='qr']").value = decodedText;
-
-                    html5QrCode.stop();
-                    document.getElementById("formQR").submit();
-                }
-            );
-
-        } else {
+        if (!devices || devices.length === 0) {
             alert("No se detectaron cámaras");
+            return;
         }
+
+        // 🔥 Iniciar directamente con cámara trasera
+        html5QrCode.start(
+            { facingMode: "environment" }, // 👈 cámara trasera en móviles
+            {
+                fps: 10,
+                qrbox: 250,
+                aspectRatio: 1.0
+            },
+            (decodedText) => {
+
+                // colocar QR en input
+                const input = document.querySelector("input[name='qr']");
+                input.value = decodedText;
+
+                // detener cámara
+                html5QrCode.stop().then(() => {
+                    document.getElementById("reader").innerHTML = "";
+                });
+
+                // enviar formulario
+                document.getElementById("formQR").submit();
+            },
+            (errorMessage) => {
+                // errores de lectura silenciosos (no molestan)
+                console.log(errorMessage);
+            }
+        );
 
     }).catch(err => {
         console.log(err);
