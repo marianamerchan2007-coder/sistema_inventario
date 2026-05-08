@@ -37,7 +37,7 @@ $tallas = $stmt_tallas->fetchAll(PDO::FETCH_COLUMN);
                         <small class="text-muted">Modelo registrado</small>
                     </div>
 
-                    <img src="../image/<?= $fila['imagen']; ?>" class="modelo-img-right">
+                    <img src="<?= $fila['imagen']; ?>" class="modelo-img-right">
 
                 </div>
 

@@ -64,7 +64,7 @@ foreach ($registros as $registro) {
                 <div class="modelo-card mb-4">
 
                     <div class="modelo-image">
-                        <img src="../image/<?= htmlspecialchars($registros[0]['imagen']); ?>" 
+                        <img src="<?= htmlspecialchars($registros[0]['imagen']); ?>" 
                             alt="image">
                     </div>
 

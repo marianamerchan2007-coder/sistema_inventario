@@ -2,9 +2,28 @@
 include('../includes/auth.php'); ?>
 
 <?php 
+require '../vendor/autoload.php';
+
+use Cloudinary\Configuration\Configuration;
+use Cloudinary\Api\Upload\UploadApi;
+
+Configuration::instance([
+    'cloud' => [
+        'cloud_name' => 'dwpgi7rnl',
+        'api_key'    => '155544861992565',
+        'api_secret' => 'TU_API_SECRET_COMPLETO'
+    ],
+    'url' => [
+        'secure' => true
+    ]
+]);
+
+
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     die("Acceso no permitido");
 }
+
+
 $id = $_POST["txtId"] ?? '';
 $nombre = $_POST["txtNombre"] ?? '';
 $descripcion = $_POST["txtDescripcion"] ?? '';
@@ -15,14 +34,23 @@ $tallas = $_POST["txtTalla"] ?? '';
 // IMAGEN
 if (!empty($_FILES["txtImagen"]["name"])) {
 
-    $nombre_imagen = time() . "_" . $_FILES["txtImagen"]["name"];
-    $ruta_tmp = $_FILES["txtImagen"]["tmp_name"];
+    try {
 
-    $ruta_destino = __DIR__ . "/../image/" . $nombre_imagen;
+        $subida = (new UploadApi())->upload(
+            $_FILES["txtImagen"]["tmp_name"]
+        );
 
-    move_uploaded_file($ruta_tmp, $ruta_destino);
+        // URL CLOUDINARY
+        $nombre_imagen = $subida['secure_url'];
+
+    } catch (Exception $e) {
+
+        die("Error al subir imagen: " . $e->getMessage());
+    }
 
 } else {
+
+    // Mantener imagen actual
     $nombre_imagen = $_POST["imagen_actual"];
 }
 

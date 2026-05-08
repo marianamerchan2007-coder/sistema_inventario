@@ -107,7 +107,7 @@ $modelos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <?php foreach ($modelos as $modelo): ?>
                         <div class="modelo-card-mobile">
                             
-                            <img src="../image/<?php echo $modelo['imagen']; ?>" class="modelo-img-mobile">
+                            <img src="<?php echo $modelo['imagen']; ?>" class="modelo-img-mobile">
 
                             <div class="modelo-info-mobile">
                                 <h6><?php echo $modelo['nombre_modelo']; ?></h6>

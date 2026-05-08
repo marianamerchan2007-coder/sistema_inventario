@@ -71,7 +71,7 @@ $registros=$stmt->fetchAll(PDO::FETCH_ASSOC);
                             <?php foreach ($registros as $r): ?>
                                 <tr>
                                     <td>
-                                        <img src="../image/<?php echo $r['imagen']; ?>"
+                                        <img src="<?php echo $r['imagen']; ?>"
                                         width="100" height="80"
                                         style="object-fit: cover; border-radius: 10px;"
                                         onclick="verImagen(this)">
@@ -115,7 +115,7 @@ $registros=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
                         <!-- IMAGEN -->
                         <div class="inventario-img-container">
-                            <img src="../image/<?php echo $r['imagen']; ?>" class="inventario-img">
+                            <img src="<?php echo $r['imagen']; ?>" class="inventario-img">
                         </div>
 
                         <!-- CONTENIDO -->

@@ -113,7 +113,7 @@ include('../includes/sidebar.php');
 
                 <!-- IMAGEN -->
                 <div class="modelo-image">
-                    <img src="../image/<?= $datos[0]['imagen']; ?>">
+                    <img src="<?= $datos[0]['imagen']; ?>">
                 </div>
 
                 <!-- INFO -->

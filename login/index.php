@@ -20,7 +20,7 @@ session_start();
         <div class="login-box">
             <form action="login.php" method="POST">
 
-                <div class="logo">
+                <dactualizaiv class="logo">
                     <img src="../image/logo.jpg" alt="">
                 </div>
 

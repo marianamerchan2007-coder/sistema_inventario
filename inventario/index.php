@@ -145,7 +145,7 @@ $nombre_sucursal = $sucursal_usuario['nombre_sucursal'] ?? '';
                                     </td>
                                     
                                     <td>
-                                        <img src="../image/<?php echo $modelo['imagen']; ?>"
+                                        <img src="<?php echo $modelo['imagen']; ?>"
                                         width="100" height="80"
                                         style="object-fit: cover; border-radius: 10px;"
                                         onclick="verImagen(this)">
@@ -190,7 +190,7 @@ $nombre_sucursal = $sucursal_usuario['nombre_sucursal'] ?? '';
 
                         <!-- IMAGEN -->
                         <div class="inventario-img-container">
-                            <img src="../image/<?php echo $modelo['imagen']; ?>" class="inventario-img">
+                            <img src="<?php echo $modelo['imagen']; ?>" class="inventario-img">
                         </div>
 
                         <!-- INFO -->
