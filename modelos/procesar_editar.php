@@ -1,7 +1,8 @@
-<?php include("../config/conexion.php");
-include('../includes/auth.php'); ?>
-
 <?php 
+
+include("../config/conexion.php");
+include('../includes/auth.php'); 
+
 require '../vendor/autoload.php';
 
 use Cloudinary\Configuration\Configuration;
