@@ -11,7 +11,7 @@ Configuration::instance([
     'cloud' => [
         'cloud_name' => 'dwpgi7rnl',
         'api_key'    => '155544861992565',
-        'api_secret' => 'TU_API_SECRET_COMPLETO'
+        'api_secret' => 'PQM45zXZXJuymfeR2MQaAPIwPHE'
     ],
     'url' => [
         'secure' => true
