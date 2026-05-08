@@ -1,6 +1,22 @@
-<?php 
+<?php
+
 include ("../config/conexion.php"); 
 include('../includes/auth.php');
+
+require '../vendor/autoload.php';
+
+use Cloudinary\Cloudinary;
+
+$cloudinary = new Cloudinary([
+    'cloud' => [
+        'cloud_name' => 'dwpgi7rnl',
+        'api_key'    => '155544861992565',
+        'api_secret' => 'PQM45zXZXJuymfeR2MQaAPIwPHE'
+    ],
+    'url' => [
+        'secure' => true
+    ]
+]);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -12,23 +28,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $nombreImagen = "";
 
+    // SUBIR A CLOUDINARY
     if ($imagen && $imagen['error'] == 0) {
 
-        $nombreImagen = time() . "_" . basename($imagen['name']);
+        $subida = $cloudinary->uploadApi()->upload(
+            $imagen['tmp_name']
+        );
 
-        $carpeta = __DIR__ . "/../uploads/";
-
-        if (!is_dir($carpeta)) {
-            mkdir($carpeta, 0777, true);
-        }
-
-        $rutaDestino = $carpeta . $nombreImagen;
-
-        if (!move_uploaded_file($imagen['tmp_name'], $rutaDestino)) {
-            die("❌ No se pudo subir la imagen");
-        }
+        $nombreImagen = $subida['secure_url'];
     }
-
 
     try {
 
@@ -64,14 +72,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     } catch (PDOException $e) {
 
-    // error por duplicado (clave única)
-    if ($e->getCode() == 23000) {
-        header("Location: nuevo_modelo.php?error=duplicado");
-        exit();
-    } else {
-        echo " Error: " . $e->getMessage();
+        if ($e->getCode() == 23000) {
+            header("Location: nuevo_modelo.php?error=duplicado");
+            exit();
+        } else {
+            echo "Error: " . $e->getMessage();
+        }
     }
-}
 }
 
 include('../includes/header.php');

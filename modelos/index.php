@@ -76,7 +76,7 @@ $modelos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <?php foreach ($modelos as $modelo): ?>
                                 <tr>
                                     <td>
-                                        <img src="/uploads/<?php echo $modelo['imagen']; ?>"
+                                        <img src="<?php echo $modelo['imagen']; ?>"
                                         style="width: 100px; height: 90px; object-fit: cover; border-radius: 10px;">
                                     </td>
 
