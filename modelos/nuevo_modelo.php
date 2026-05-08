@@ -1,17 +1,24 @@
 <?php
 
-include ("../config/conexion.php"); 
+include("../config/conexion.php");
 include('../includes/auth.php');
 
 require '../vendor/autoload.php';
 
-use Cloudinary\Cloudinary;
+use Cloudinary\Configuration\Configuration;
+use Cloudinary\Api\Upload\UploadApi;
 
-$cloudinary = new Cloudinary([
+/*
+|--------------------------------------------------------------------------
+| CONFIGURAR CLOUDINARY
+|--------------------------------------------------------------------------
+*/
+
+Configuration::instance([
     'cloud' => [
         'cloud_name' => 'dwpgi7rnl',
         'api_key'    => '155544861992565',
-        'api_secret' => 'PQM45zXZXJuymfeR2MQaAPIwPHE'
+        'api_secret' => 'TU_API_SECRET_COMPLETO'
     ],
     'url' => [
         'secure' => true
@@ -28,21 +35,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $nombreImagen = "";
 
-    // SUBIR A CLOUDINARY
+    /*
+    |--------------------------------------------------------------------------
+    | SUBIR IMAGEN A CLOUDINARY
+    |--------------------------------------------------------------------------
+    */
+
     if ($imagen && $imagen['error'] == 0) {
 
-        $subida = $cloudinary->uploadApi()->upload(
-            $imagen['tmp_name']
-        );
+        try {
 
-        $nombreImagen = $subida['secure_url'];
+            $subida = (new UploadApi())->upload(
+                $imagen['tmp_name']
+            );
+
+            // URL de la imagen subida
+            $nombreImagen = $subida['secure_url'];
+
+        } catch (Exception $e) {
+
+            die("Error al subir imagen: " . $e->getMessage());
+        }
     }
 
     try {
 
+        /*
+        |--------------------------------------------------------------------------
+        | GUARDAR MODELO
+        |--------------------------------------------------------------------------
+        */
+
         $stmt = $conexion->prepare("
-            INSERT INTO modelo (nombre_modelo, descripcion, origen_producto, imagen) 
-            VALUES (:nombre, :descripcion, :origen, :imagen)
+            INSERT INTO modelo (
+                nombre_modelo,
+                descripcion,
+                origen_producto,
+                imagen
+            )
+            VALUES (
+                :nombre,
+                :descripcion,
+                :origen,
+                :imagen
+            )
         ");
 
         $stmt->execute([
@@ -54,11 +90,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $idModelo = $conexion->lastInsertId();
 
+        /*
+        |--------------------------------------------------------------------------
+        | GUARDAR TALLAS
+        |--------------------------------------------------------------------------
+        */
+
         foreach ($tallas as $talla) {
 
             $stmtTalla = $conexion->prepare("
-                INSERT INTO talla (id_modelo, numero_talla) 
-                VALUES (:id_modelo, :talla)
+                INSERT INTO talla (
+                    id_modelo,
+                    numero_talla
+                )
+                VALUES (
+                    :id_modelo,
+                    :talla
+                )
             ");
 
             $stmtTalla->execute([
@@ -73,9 +121,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (PDOException $e) {
 
         if ($e->getCode() == 23000) {
+
             header("Location: nuevo_modelo.php?error=duplicado");
             exit();
+
         } else {
+
             echo "Error: " . $e->getMessage();
         }
     }
@@ -84,6 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 include('../includes/header.php');
 include('../includes/sidebar.php');
 ?>
+
 
 <div class="main">
         <div class="container-fluid">
