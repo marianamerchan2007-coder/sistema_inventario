@@ -7,7 +7,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Calzado Bernal</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -20,7 +20,7 @@ session_start();
         <div class="login-box">
             <form action="login.php" method="POST">
 
-                <dactualizaiv class="logo">
+                <div class="logo">
                     <img src="../image/logo.jpg" alt="">
                 </div>
 
@@ -36,12 +36,12 @@ session_start();
                 <?php endif; ?>
 
                 <div class="input-group">
-                    <i class="bi bi-person-fill"></i>
+                    <i class="fas fa-user"></i>
                     <input type="text" name="nombre_usuario" placeholder="Usuario" autocomplete="off" required>
                 </div>
 
                 <div class="input-group">
-                    <i class="bi bi-lock-fill"></i>
+                    <i class="fas fa-lock"></i>
                     <input type="password" name="contrasenia" placeholder="Contraseña" autocomplete="new-password" required>
                 </div>
 
