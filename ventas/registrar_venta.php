@@ -10,12 +10,6 @@ unset($_SESSION['error']);
 $success = $_SESSION['success'] ?? null;
 unset($_SESSION['success']);
 
-// 🔥 limpiar URL si viene QR o reset
-if (isset($_GET['qr']) || isset($_GET['reset'])) {
-    echo "<script>
-        window.history.replaceState({}, document.title, 'registrar_venta.php');
-    </script>";
-}
 
 // 🔥 QR correctamente definido
 $qr = isset($_GET['qr']) ? trim($_GET['qr']) : null;
