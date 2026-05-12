@@ -33,7 +33,7 @@ try {
     }
 
     if ($cantidad > $origen['cantidad_disponible']) {
-    session_start();
+        
     $_SESSION['error'] = "Stock insuficiente para la transferencia";
 
     $conexion->rollBack(); 

@@ -37,12 +37,12 @@ session_start();
 
                 <div class="input-group">
                     <i class="fas fa-user"></i>
-                    <input type="text" name="nombre_usuario" placeholder="Usuario" autocomplete="off" required>
+                    <input type="text" name="nombre_usuario" placeholder="Usuario" required>
                 </div>
 
                 <div class="input-group">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="contrasenia" placeholder="Contraseña" autocomplete="new-password" required>
+                    <input type="password" name="contrasenia" placeholder="Contraseña" required>
                 </div>
 
                 <button type="submit">Ingresar</button>
