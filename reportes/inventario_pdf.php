@@ -101,7 +101,7 @@ tr:nth-child(even) {
 <div class="header">
     <div class="title">Calzado Bernal</div>
     <div class="subtitle">Reporte de Inventario</div>
-    <div class="subtitle">'.date("d/m/Y H:i").'</div>
+    <div class="subtitle">'.date("d/m/Y H:i A").'</div>
 </div>
 
 <div class="filtros">

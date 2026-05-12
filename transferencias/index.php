@@ -84,7 +84,7 @@ $registros=$stmt->fetchAll(PDO::FETCH_ASSOC);
                                         </span>
                                     </td>
                                     
-                                    <td><?= date("d/m/Y H:i", strtotime($r['fecha_transferencia'])) ?></td>
+                                    <td><?= date("d/m/Y H:i A", strtotime($r['fecha_transferencia'])) ?></td>
                                     
                                     <td>
                                         <?php if ($r['estado'] == 'pendiente'): ?>

@@ -115,7 +115,7 @@ $registros=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
                         <span>
                             <i class="bi bi-calendar"></i>
-                            <?= date("d/m/Y H:i", strtotime($r['fecha_transferencia'])); ?>
+                            <?= date("d/m/Y H:i A", strtotime($r['fecha_transferencia'])); ?>
                         </span>
                         
                     </div>

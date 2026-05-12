@@ -95,7 +95,7 @@ foreach ($registros as $registro) {
                                 <tr>
                                     <td><?= $registro['numero_talla']; ?></td>
                                     <td><span><?= $registro['cantidad_disponible']; ?></span></td>
-                                    <td><?= date("d/m/Y H:i", strtotime($registro['fecha_ingreso'])) ?></td>
+                                    <td><?= date("d/m/Y H:i A", strtotime($registro['fecha_ingreso'])) ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -118,7 +118,7 @@ foreach ($registros as $registro) {
                                 </div>
 
                                 <small class="text-muted">
-                                    <?= date("d/m/Y H:i", strtotime($registro['fecha_ingreso'])) ?>
+                                    <?= date("d/m/Y H:i A", strtotime($registro['fecha_ingreso'])) ?>
                                 </small>
                             </div>
 
