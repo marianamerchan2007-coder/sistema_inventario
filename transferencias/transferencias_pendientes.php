@@ -92,7 +92,7 @@ $registros = $stmt-> fetchAll(PDO::FETCH_ASSOC);
                                     <td><?php echo $registro['sucursal_origen'] ?></td>
                                     <td><?php echo $registro['sucursal_destino'] ?></td>
                                     <td>
-                                    <?= date("d/m/Y H:i:s", strtotime($registro['fecha_transferencia'])) ?>
+                                    <?= date("d/m/Y H:i A", strtotime($registro['fecha_transferencia'])) ?>
                                     </td>
 
                                     <td>

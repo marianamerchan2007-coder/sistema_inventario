@@ -61,7 +61,7 @@ $registros=$stmt->fetchAll(PDO::FETCH_ASSOC);
                 <tbody>
                     <?php foreach ($registros as $r): ?>
                         <tr>
-                            <td><?= $r['fecha_transferencia']; ?></td>
+                            <td><?= date("d/m/Y h:i A", strtotime($r['fecha_transferencia'])); ?></td>
                             <td><?= $r['numero_talla']; ?></td>
                             <td><?= $r['cantidad']; ?></td>
                             <td>
