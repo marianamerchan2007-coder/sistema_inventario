@@ -97,12 +97,10 @@ $tallas = $stmt_tallas->fetchAll(PDO::FETCH_COLUMN);
 
 <style>
 .form-control:disabled {
-    background: #eef6ff;
-    border: 1px solid #d6e8ff;
-    color: #1e293b;
-    border-radius: 16px;
+    background-color: #e9ecef;
+    color: #495057;
+    border: 1px solid #ced4da;
     opacity: 1;
-    font-weight: 500;
-    transition: .3s ease;
+    border-radius: 12px;
 }
 </style>
