@@ -94,3 +94,15 @@ $tallas = $stmt_tallas->fetchAll(PDO::FETCH_COLUMN);
 </div>
 
 <?php include('../includes/footer.php'); ?>
+
+<style>
+.form-control:disabled {
+    background: #eef6ff;
+    border: 1px solid #d6e8ff;
+    color: #1e293b;
+    border-radius: 16px;
+    opacity: 1;
+    font-weight: 500;
+    transition: .3s ease;
+}
+</style>
