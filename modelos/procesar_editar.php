@@ -26,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
 
 $id = $_POST["txtId"] ?? '';
-$nombre = $_POST["txtNombre"] ?? '';
 $descripcion = $_POST["txtDescripcion"] ?? '';
 $origen = $_POST["txtOrigen"] ?? '';
 $tallas = $_POST["txtTalla"] ?? '';
@@ -57,8 +56,7 @@ if (!empty($_FILES["txtImagen"]["name"])) {
 
 // UPDATE MODELO
 $sql = "UPDATE modelo 
-        SET nombre_modelo = :nombre,
-            descripcion = :descripcion,
+        SET descripcion = :descripcion,
             origen_producto = :origen,
             imagen = :imagen
         WHERE id_modelo = :id";
@@ -66,7 +64,6 @@ $sql = "UPDATE modelo
 $stmt = $conexion->prepare($sql);
 
 $stmt->execute([
-    ":nombre" => $nombre,
     ":descripcion" => $descripcion,
     ":origen" => $origen,
     ":imagen" => $nombre_imagen,

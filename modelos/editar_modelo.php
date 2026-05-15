@@ -43,7 +43,7 @@ $tallas = $stmt_tallas->fetchAll(PDO::FETCH_COLUMN);
 
                 <div class="mb-2">
                     <label class="form-label" for="nombre">Nombre de modelo</label>
-                    <input type="text" name="txtNombre" id="nombre" class="form-control" placeholder="Nombre del modelo" value="<?php echo $fila['nombre_modelo']; ?>">
+                    <input type="text" id="nombre" class="form-control" placeholder="Nombre del modelo" value="<?php echo $fila['nombre_modelo']; ?>" disabled>
                 </div>
 
                 
