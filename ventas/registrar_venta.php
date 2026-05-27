@@ -403,20 +403,51 @@ if (select) {
 
 @media (max-width: 768px){
 
+    /* FORMULARIO QR */
+    #formQR{
+        gap: 10px !important;
+        align-items: stretch !important;
+    }
+
+    /* INPUT MÁS GRANDE */
+    #formQR .flex-grow-1{
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    #formQR input.form-control{
+        height: 46px;
+        font-size: 15px;
+        padding: 10px 14px;
+    }
+
+    /* MENSAJE 100% ANCHO */
+    .qr-help{
+        width: 100%;
+        display: block;
+        margin-top: 10px;
+
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* BOTONES */
     .btn-qr-action{
-        height: 36px;
-        min-width: 38px;
-        padding: 0 6px;
-        font-size: 11px;
-        border-radius: 8px;
+        height: 46px;
+        min-width: 48px;
+
+        padding: 0 10px;
+        font-size: 13px;
+
+        border-radius: 10px;
     }
 
     .btn-primary.btn-qr-action{
-        min-width: 70px;
+        min-width: 80px;
     }
 
     .btn-qr-action i{
-        font-size: 13px;
+        font-size: 16px;
     }
 }
 </style>
