@@ -76,9 +76,9 @@ include('../includes/sidebar.php');
                 <h5 class="pb-3">Registro de ventas - <?= $sucursal_usuario['nombre_sucursal']; ?></h5>
                 
                 <form method="GET" id="formQR" class="d-flex gap-2 align-items-start pb-3">
-                    <div class="flex-grow-1" style="width:100%; display:block;">
+                    <div class="flex-grow-1">
                         <input type="text" name="qr" class="form-control mb-2" placeholder="Escanea o escribe el QR" required>
-                        <small class="qr-help" style="width:100%; display:block;">
+                        <small class="qr-help">
                             <i class="bi bi-info-circle-fill"></i>
                             <strong>Formato:</strong> NombreModelo-Sucursal <br>
                             <span>Ejemplo:</span> Sport-Black-Planta o Deportivo-Local
@@ -399,76 +399,6 @@ if (select) {
     min-width: 55px;
     margin-top: 0;
     align-self: flex-start;
-}
-
-@media (max-width: 768px){
-
-    /* FORMULARIO */
-    #formQR{
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-        width: 100%;
-    }
-
-    /* INPUT CONTENEDOR */
-    #formQR .flex-grow-1{
-        flex: 1 1 auto;
-        width: 100%;
-        min-width: 0;
-    }
-
-    /* INPUT */
-    #formQR input.form-control{
-        width: 100% !important;
-        height: 44px;
-
-        padding: 10px 12px;
-
-        font-size: 14px;
-        border-radius: 12px;
-    }
-
-    /* MENSAJE */
-    .qr-help{
-        display: block;
-        width: 100%;
-
-        margin-top: 10px;
-        padding: 12px;
-
-        font-size: 14px;
-        line-height: 1.6;
-
-        box-sizing: border-box;
-    }
-
-    /* BOTONES MÁS PEQUEÑOS */
-    .btn-qr-action{
-        width: 42px;
-        min-width: 42px;
-
-        height: 44px;
-
-        padding: 0;
-
-        border-radius: 10px;
-
-        flex-shrink: 0;
-    }
-
-    /* BOTÓN BUSCAR */
-    .btn-primary.btn-qr-action{
-        width: 70px;
-        min-width: 70px;
-
-        font-size: 13px;
-    }
-
-    /* ICONO QR */
-    .btn-qr-action i{
-        font-size: 15px;
-    }
 }
 </style>
 
