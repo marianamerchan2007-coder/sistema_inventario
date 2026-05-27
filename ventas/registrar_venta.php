@@ -413,15 +413,21 @@ if (select) {
     }
 
     .btn-qr-action{
-        height: 46px;
-        min-width: 48px;
+        height: 40px;
+        min-width: 42px;
 
-        padding: 0 12px;
-        font-size: 13px;
+        padding: 0 8px;   /* 👈 más pequeño */
+        font-size: 12px;
+
+        border-radius: 12px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .btn-qr-action i{
-        font-size: 16px;
+        font-size: 14px;  /* 👈 ícono más pequeño */
     }
 
     .qr-help{
