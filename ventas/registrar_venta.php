@@ -78,7 +78,7 @@ include('../includes/sidebar.php');
                 <form method="GET" id="formQR" class="d-flex gap-2 align-items-start pb-3">
                     <div class="flex-grow-1">
                         <input type="text" name="qr" class="form-control mb-2" placeholder="Escanea o escribe el QR" required>
-                        <small class="qr-help">
+                        <small class="qr-help" style="width:100%; display:block;">
                             <i class="bi bi-info-circle-fill"></i>
                             <strong>Formato:</strong> NombreModelo-Sucursal <br>
                             <span>Ejemplo:</span> Sport-Black-Planta o Deportivo-Local
