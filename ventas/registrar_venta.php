@@ -403,31 +403,33 @@ if (select) {
 
 @media (max-width: 768px){
 
-    /* FORM */
+    /* FORMULARIO */
     #formQR{
         display: flex;
         align-items: flex-start;
-        gap: 10px;
+        gap: 8px;
+        width: 100%;
     }
 
-    /* CONTENEDOR INPUT */
+    /* INPUT CONTENEDOR */
     #formQR .flex-grow-1{
-        flex: 1;
+        flex: 1 1 auto;
+        width: 100%;
         min-width: 0;
     }
 
     /* INPUT */
     #formQR input.form-control{
         width: 100% !important;
-        height: 48px;
+        height: 44px;
 
-        font-size: 16px;
-        padding: 12px 14px;
+        padding: 10px 12px;
 
+        font-size: 14px;
         border-radius: 12px;
     }
 
-    /* HELP */
+    /* MENSAJE */
     .qr-help{
         display: block;
         width: 100%;
@@ -441,24 +443,31 @@ if (select) {
         box-sizing: border-box;
     }
 
-    /* BOTONES */
+    /* BOTONES MÁS PEQUEÑOS */
     .btn-qr-action{
+        width: 42px;
+        min-width: 42px;
+
+        height: 44px;
+
+        padding: 0;
+
+        border-radius: 10px;
+
         flex-shrink: 0;
-
-        height: 48px;
-        min-width: 52px;
-
-        padding: 0 12px;
-
-        border-radius: 12px;
     }
 
+    /* BOTÓN BUSCAR */
     .btn-primary.btn-qr-action{
-        min-width: 82px;
+        width: 70px;
+        min-width: 70px;
+
+        font-size: 13px;
     }
 
+    /* ICONO QR */
     .btn-qr-action i{
-        font-size: 17px;
+        font-size: 15px;
     }
 }
 </style>
