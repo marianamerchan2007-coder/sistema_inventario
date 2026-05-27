@@ -75,21 +75,31 @@ include('../includes/sidebar.php');
 
                 <h5 class="pb-3">Registro de ventas - <?= $sucursal_usuario['nombre_sucursal']; ?></h5>
                 
-                <form method="GET" id="formQR" class="d-flex gap-2 align-items-center pb-3">
-                    <div class="w-100">
-                        <input type="text" name="qr" class="form-control mb-2" placeholder="Escanea o escribe el QR" required>
-                        <small class="qr-help">
+                <form method="GET" id="formQR" class="qr-form d-flex flex-column flex-md-row gap-2 align-items-stretch pb-3">
+
+                    <div class="qr-input-wrapper w-100">
+                        <input type="text" name="qr" class="form-control qr-input"
+                            placeholder="Escanea o escribe el QR" required>
+
+                        <div class="qr-help-box">
                             <i class="bi bi-info-circle-fill"></i>
-                            <strong>Formato:</strong> NombreModelo-Sucursal <br>
-                            <span>Ejemplo:</span> Sport-Black-Planta o Deportivo-Local
-                        </small>
+                            <div>
+                                <strong>Formato:</strong> NombreModelo-Sucursal <br>
+                                <span>Ejemplo:</span> Sport-Black-Planta o Deportivo-Local
+                            </div>
+                        </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Buscar</button>
-                    
-                    <button type="button" onclick="iniciarScanner()" class="btn btn-success">
-                        <i class="bi bi-qr-code-scan"></i>
-                    </button>
+                    <div class="qr-actions d-flex flex-md-column flex-row gap-2">
+                        <button type="submit" class="btn btn-primary w-100">
+                            Buscar
+                        </button>
+
+                        <button type="button" onclick="iniciarScanner()" class="btn btn-success w-100">
+                            <i class="bi bi-qr-code-scan"></i>
+                        </button>
+                    </div>
+
                 </form>
 
                 <?php if ($error): ?>
@@ -362,11 +372,51 @@ if (select) {
     gap: 6px;
 }
 
-.qr-help{
-    display: block;
-    margin-top: 4px;
+.qr-input {
+    height: 46px;
+    font-size: 15px;
+}
+
+/* Caja de ayuda tipo "info card" */
+.qr-help-box {
+    margin-top: 6px;
+    padding: 10px 12px;
+    background: #f1f5f9;
+    border-left: 4px solid #0d6efd;
+    border-radius: 8px;
     font-size: 13px;
-    color: #64748b;
+    color: #475569;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+/* Icono */
+.qr-help-box i {
+    color: #0d6efd;
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+/* Botones */
+.qr-actions button {
+    height: 46px;
+    min-width: 120px;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .qr-form {
+        flex-direction: column;
+    }
+
+    .qr-actions {
+        flex-direction: row;
+    }
+
+    .qr-actions button {
+        width: 50%;
+    }
 }
 </style>
 
