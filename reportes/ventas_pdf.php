@@ -52,6 +52,10 @@ if ($id_sucursal) {
     $stmtSuc = $conexion->prepare("SELECT nombre_sucursal FROM sucursal WHERE id_sucursal = ?");
     $stmtSuc->execute([$id_sucursal]);
     $nombreSucursal = $stmtSuc->fetchColumn();
+
+    // APLICAR FILTRO AL PDF
+    $sql .= " AND i.id_sucursal = :sucursal";
+    $params[':sucursal'] = $id_sucursal;
 }
 
 if($tipo){
