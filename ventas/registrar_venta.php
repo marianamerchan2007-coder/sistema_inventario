@@ -85,6 +85,12 @@ include('../includes/sidebar.php');
                     </button>
                 </form>
 
+                <small class="qr-help">
+                    <i class="bi bi-info-circle-fill"></i>
+                    <strong>Formato:</strong> NombreModelo-Sucursal <br>
+                    <span>Ejemplo:</span> Sport-Black-Planta o Deportivo-Local
+                </small>
+
                 <?php if ($error): ?>
                     <div class="alert alert-danger">
                         <?= $error ?>
@@ -353,6 +359,47 @@ if (select) {
     display: flex;
     align-items: center;
     gap: 6px;
+}
+
+.qr-help{
+    display: block;
+    width: 100%;
+
+    margin-top: 8px;
+    padding: 12px;
+
+    background: #f8fafc;
+    border: 1px solid #dbeafe;
+    border-left: 4px solid #2563eb;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+}
+
+.qr-help i{
+    color: #2563eb;
+    margin-right: 5px;
+}
+
+.qr-help strong{
+    color: #1e3a8a;
+}
+
+@media (max-width: 768px){
+
+    #formQR input{
+        height: 42px;
+        font-size: 14px;
+    }
+
+    #formQR .btn{
+        height: 42px;
+        padding: 0 12px;
+        font-size: 13px;
+    }
 }
 </style>
 
