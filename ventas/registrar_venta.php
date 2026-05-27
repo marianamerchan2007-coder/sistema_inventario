@@ -403,38 +403,20 @@ if (select) {
 
 @media (max-width: 768px){
 
-    #formQR{
-        gap: 8px;
-    }
-
-    #formQR .form-control{
-        height: 46px;
-        font-size: 14px;
-    }
-
     .btn-qr-action{
-        height: 40px;
-        min-width: 42px;
+        height: 36px;
+        min-width: 38px;
+        padding: 0 6px;
+        font-size: 11px;
+        border-radius: 8px;
+    }
 
-        padding: 0 8px;   /* 👈 más pequeño */
-        font-size: 12px;
-
-        border-radius: 12px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .btn-primary.btn-qr-action{
+        min-width: 70px;
     }
 
     .btn-qr-action i{
-        font-size: 14px;  /* 👈 ícono más pequeño */
-    }
-
-    .qr-help{
-        width: 100%;
-        font-size: 12px;
-        padding: 10px 12px;
-        line-height: 1.5;
+        font-size: 13px;
     }
 }
 </style>
