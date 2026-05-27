@@ -400,6 +400,30 @@ if (select) {
     margin-top: 0;
     align-self: flex-start;
 }
+
+@media (max-width: 768px){
+
+    #formQR{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    #formQR .flex-grow-1{
+        width: 100%;
+    }
+
+    .btn-qr-action{
+        flex: 1;
+        height: 48px;
+        min-width: unset;
+    }
+
+    .qr-help{
+        width: 100%;
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+}
 </style>
 
 
