@@ -79,7 +79,9 @@ include('../includes/sidebar.php');
                     <div class="w-100">
                         <input type="text" name="qr" class="form-control mb-2" placeholder="Escanea o escribe el QR" required>
                         <small class="qr-help">
-                            <i class="bi bi-info-circle"></i>Formato: NombreModelo-Sucursal <br>Ejemplo: Sport-Black-Planta o Deportivo-Local 
+                            <i class="bi bi-info-circle-fill"></i>
+                            <strong>Formato:</strong> NombreModelo-Sucursal <br>
+                            <span>Ejemplo:</span> Sport-Black-Planta o Deportivo-Local
                         </small>
                     </div>
 
@@ -361,10 +363,35 @@ if (select) {
 }
 
 .qr-help{
-    display: block;
-    margin-top: 4px;
+    display: inline-block;
+    margin-top: 6px;
+    padding: 10px 12px;
+
+    background: #f8fafc;
+    border: 1px solid #dbeafe;
+    border-left: 4px solid #2563eb;
+
+    border-radius: 10px;
+
     font-size: 13px;
+    line-height: 1.5;
+    color: #475569;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.qr-help i{
+    color: #2563eb;
+    margin-right: 5px;
+}
+
+.qr-help strong{
+    color: #1e3a8a;
+}
+
+.qr-help span{
     color: #64748b;
+    font-weight: 500;
 }
 </style>
 
