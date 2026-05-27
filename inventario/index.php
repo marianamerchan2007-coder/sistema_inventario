@@ -22,7 +22,7 @@ $sql = "SELECT
     m.origen_producto,
     s.nombre_sucursal,
     SUM(i.cantidad_disponible) AS cantidad_total,
-    CONCAT(m.nombre_modelo, '-', s.nombre_sucursal) AS codigo_qr
+    CONCAT(REPLACE(TRIM(m.nombre_modelo), ' ', '-'),'-',REPLACE(TRIM(s.nombre_sucursal), ' ', '-')) AS codigo_qr
 FROM inventario i
 INNER JOIN modelo m ON i.id_modelo = m.id_modelo
 INNER JOIN sucursal s ON i.id_sucursal = s.id_sucursal
