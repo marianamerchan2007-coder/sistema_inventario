@@ -75,8 +75,8 @@ include('../includes/sidebar.php');
 
                 <h5 class="pb-3">Registro de ventas - <?= $sucursal_usuario['nombre_sucursal']; ?></h5>
                 
-                <form method="GET" id="formQR" class="d-flex gap-2 align-items-start pb-3">
-                    <div class="flex-grow-1">
+                <form method="GET" id="formQR" class="d-flex gap-2 align-items-center pb-3">
+                    <div class="w-100">
                         <input type="text" name="qr" class="form-control mb-2" placeholder="Escanea o escribe el QR" required>
                         <small class="qr-help">
                             <i class="bi bi-info-circle-fill"></i>
@@ -85,9 +85,9 @@ include('../includes/sidebar.php');
                         </small>
                     </div>
 
-                      <button type="submit" class="btn btn-primary btn-qr-action">Buscar</button>
+                    <button type="submit" class="btn btn-primary">Buscar</button>
                     
-                    <button type="button" onclick="iniciarScanner()" class="btn btn-success btn-qr-action">
+                    <button type="button" onclick="iniciarScanner()" class="btn btn-success">
                         <i class="bi bi-qr-code-scan"></i>
                     </button>
                 </form>
@@ -363,42 +363,10 @@ if (select) {
 }
 
 .qr-help{
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 12px;
-
-    background: #f8fafc;
-    border: 1px solid #dbeafe;
-    border-left: 4px solid #2563eb;
-
-    border-radius: 10px;
-
+    display: block;
+    margin-top: 4px;
     font-size: 13px;
-    line-height: 1.5;
-    color: #475569;
-
-    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-}
-
-.qr-help i{
-    color: #2563eb;
-    margin-right: 5px;
-}
-
-.qr-help strong{
-    color: #1e3a8a;
-}
-
-.qr-help span{
     color: #64748b;
-    font-weight: 500;
-}
-
-.btn-qr-action{
-    height: 45px;
-    min-width: 55px;
-    margin-top: 0;
-    align-self: flex-start;
 }
 </style>
 
