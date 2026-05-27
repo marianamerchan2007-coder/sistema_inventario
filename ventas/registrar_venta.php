@@ -11,7 +11,7 @@ $success = $_SESSION['success'] ?? null;
 unset($_SESSION['success']);
 
 
-// 🔥 QR correctamente definido
+//  QR correctamente definido
 $qr = isset($_GET['qr']) ? trim($_GET['qr']) : null;
 
 $datos = [];
@@ -34,7 +34,7 @@ if ($qr) {
     $datos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// 🔥 validación sucursal (NO rompe flujo con reset)
+//  validación sucursal (NO rompe flujo con reset)
 if (!empty($datos)) {
 
     $id_sucursal_usuario = $_SESSION['sucursal'];
@@ -44,7 +44,7 @@ if (!empty($datos)) {
 
         $_SESSION['error'] = "❌ No puedes vender productos de otra sucursal.";
 
-        // 🔥 IMPORTANTE: limpiar estado sin QR
+        //  IMPORTANTE: limpiar estado sin QR
         header("Location: registrar_venta.php");
         exit();
     }
@@ -76,8 +76,13 @@ include('../includes/sidebar.php');
                 <h5 class="pb-3">Registro de ventas - <?= $sucursal_usuario['nombre_sucursal']; ?></h5>
                 
                 <form method="GET" id="formQR" class="d-flex gap-2 align-items-center pb-3">
-                    <input type="text" name="qr" class="form-control mb-2" placeholder="Escanea o escribe el QR" required>
-                    
+                    <div class="w-100">
+                        <input type="text" name="qr" class="form-control mb-2" placeholder="Escanea o escribe el QR" required>
+                        <small class="qr-help">
+                            <i class="bi bi-info-circle"></i>Formato: NombreModelo-Sucursal <br>Ejemplo: Sport-Black-Planta o Deportivo-Local 
+                        </small>
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Buscar</button>
                     
                     <button type="button" onclick="iniciarScanner()" class="btn btn-success">
@@ -355,6 +360,12 @@ if (select) {
     gap: 6px;
 }
 
+.qr-help{
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    color: #64748b;
+}
 </style>
 
 
