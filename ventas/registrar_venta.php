@@ -397,7 +397,7 @@ if (select) {
 
     #formQR .btn{
         height: 42px;
-        padding: 0 12px;
+        padding: 0 10px;
         font-size: 13px;
     }
 }
