@@ -404,24 +404,31 @@ if (select) {
 @media (max-width: 768px){
 
     #formQR{
-        flex-wrap: wrap;
-        gap: 10px;
+        gap: 8px;
     }
 
-    #formQR .flex-grow-1{
-        width: 100%;
+    #formQR .form-control{
+        height: 46px;
+        font-size: 14px;
     }
 
     .btn-qr-action{
-        flex: 1;
-        height: 48px;
-        min-width: unset;
+        height: 46px;
+        min-width: 48px;
+
+        padding: 0 12px;
+        font-size: 13px;
+    }
+
+    .btn-qr-action i{
+        font-size: 16px;
     }
 
     .qr-help{
         width: 100%;
         font-size: 12px;
         padding: 10px 12px;
+        line-height: 1.5;
     }
 }
 </style>
