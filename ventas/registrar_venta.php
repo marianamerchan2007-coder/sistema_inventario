@@ -92,7 +92,7 @@ include('../includes/sidebar.php');
                 <small class="qr-help">
                     <i class="bi bi-info-circle-fill"></i>
                     <strong>QR:</strong> NombreModelo - Sucursal <br>
-                    <span>Ejemplo:</span> Sport-Black-Planta o Deportivo-Local
+                    <span>Ejemplo:</span> Sport-Black-Planta o <br> Deportivo-Local
                 </small>
 
                 <?php if ($error): ?>
@@ -383,7 +383,7 @@ if (select) {
 
 .qr-help i{
     color: #2563eb;
-    margin-right: 5px;
+    margin-right: 3px;
 }
 
 .qr-help strong{
