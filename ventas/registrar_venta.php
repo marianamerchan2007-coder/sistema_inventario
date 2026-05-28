@@ -76,7 +76,7 @@ include('../includes/sidebar.php');
                 <h5 class="pb-3">Registro de ventas - <?= $sucursal_usuario['nombre_sucursal']; ?></h5>
                 
                 <form method="GET" id="formQR" class="d-flex gap-2 align-items-center pb-3">
-                    <input type="text" name="qr" class="form-control mb-2" placeholder="Escanea o escribe el QR(NombreModelo - Sucursal)" required>
+                    <input type="text" name="qr" class="form-control mb-2" placeholder="Escanea o escribe el QR" required>
                     
                     <button type="submit" class="btn btn-primary">Buscar</button>
                     
