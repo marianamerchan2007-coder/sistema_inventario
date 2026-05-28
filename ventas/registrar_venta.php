@@ -89,7 +89,15 @@ include('../includes/sidebar.php');
                     <div id="reader"></div>
                 </div>
 
-                <?php if ($error): ?>
+
+                <small class="qr-help my-3">
+                    <i class="bi bi-info-circle-fill"></i>
+                    <strong>QR:</strong> NombreModelo - Sucursal <br>
+                    <span>Ejemplo:</span> Sport-Black-Planta o <br> Deportivo-Local
+                </small>
+            </div>
+
+            <?php if ($error): ?>
                     <div class="alert alert-danger">
                         <?= $error ?>
                     </div>
@@ -100,14 +108,6 @@ include('../includes/sidebar.php');
                         <?= $success ?>
                     </div>
                 <?php endif; ?>
-
-                <small class="qr-help my-3">
-                    <i class="bi bi-info-circle-fill"></i>
-                    <strong>QR:</strong> NombreModelo - Sucursal <br>
-                    <span>Ejemplo:</span> Sport-Black-Planta o <br> Deportivo-Local
-                </small>
-
-            </div>
 
             <?php if (!empty($datos)): ?>
             
