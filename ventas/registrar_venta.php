@@ -102,10 +102,6 @@ include('../includes/sidebar.php');
                     </div>
                 <?php endif; ?>
 
-                <small class="qr-help my-3">
-                    <i class="bi bi-info-circle-fill"></i>
-                    <strong>QR:</strong> NombreModelo - Sucursal <br>
-                </small>
 
             <?php if (!empty($datos)): ?>
             
