@@ -85,13 +85,13 @@ include('../includes/sidebar.php');
                     </button>
                 </form>
 
-                <div class="my-2">
+                <div class="my-3">
                     <div id="reader"></div>
                 </div>
 
                 <small class="qr-help">
                     <i class="bi bi-info-circle-fill"></i>
-                    <strong>Formato:</strong> NombreModelo-Sucursal <br>
+                    <strong>QR:</strong> NombreModelo - Sucursal <br>
                     <span>Ejemplo:</span> Sport-Black-Planta o Deportivo-Local
                 </small>
 
@@ -376,7 +376,7 @@ if (select) {
 
     border-radius: 10px;
 
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.6;
     color: #475569;
 }
