@@ -90,7 +90,7 @@ include('../includes/sidebar.php');
                 </div>
             </div>
 
-            <?php if ($error): ?>
+                <?php if ($error): ?>
                     <div class="alert alert-danger">
                         <?= $error ?>
                     </div>
@@ -101,12 +101,13 @@ include('../includes/sidebar.php');
                         <?= $success ?>
                     </div>
                 <?php endif; ?>
-            <?php if (!empty($datos)): ?>
 
                 <small class="qr-help my-3">
                     <i class="bi bi-info-circle-fill"></i>
                     <strong>QR:</strong> NombreModelo - Sucursal <br>
                 </small>
+
+            <?php if (!empty($datos)): ?>
             
             <div class="modelo-card mb-3">
 
