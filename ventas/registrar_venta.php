@@ -357,33 +357,6 @@ if (select) {
     gap: 6px;
 }
 
-.qr-help{
-    display: block;
-    width: 100%;
-
-    margin-top: 8px;
-    padding: 12px;
-
-    background: #f8fafc;
-    border: 1px solid #dbeafe;
-    border-left: 4px solid #2563eb;
-
-    border-radius: 10px;
-
-    font-size: 14px;
-    line-height: 1.6;
-    color: #475569;
-}
-
-.qr-help i{
-    color: #2563eb;
-    margin-right: 3px;
-}
-
-.qr-help strong{
-    color: #1e3a8a;
-}
-
 @media (max-width: 768px){
 
     #formQR input{
@@ -394,15 +367,6 @@ if (select) {
     #formQR .btn{
         height: 42px;
         padding: 0 10px;
-        font-size: 13px;
-    }
-    .qr-help{
-        font-size: 12px;
-        padding: 10px;
-        line-height: 1.4;
-    }
-
-    .qr-help i{
         font-size: 13px;
     }
 }
