@@ -85,6 +85,10 @@ include('../includes/sidebar.php');
                     </button>
                 </form>
 
+                <div class="my-2">
+                    <div id="reader"></div>
+                </div>
+
                 <small class="qr-help">
                     <i class="bi bi-info-circle-fill"></i>
                     <strong>Formato:</strong> NombreModelo-Sucursal <br>
@@ -102,8 +106,6 @@ include('../includes/sidebar.php');
                         <?= $success ?>
                     </div>
                 <?php endif; ?>
-
-                <div id="reader"></div>
 
             </div>
 
