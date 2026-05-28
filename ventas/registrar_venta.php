@@ -376,7 +376,7 @@ if (select) {
 
     border-radius: 10px;
 
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.6;
     color: #475569;
 }
@@ -400,6 +400,15 @@ if (select) {
     #formQR .btn{
         height: 42px;
         padding: 0 10px;
+        font-size: 13px;
+    }
+    .qr-help{
+        font-size: 12px;
+        padding: 10px;
+        line-height: 1.4;
+    }
+
+    .qr-help i{
         font-size: 13px;
     }
 }
