@@ -108,6 +108,13 @@ if (session_status() === PHP_SESSION_NONE) {
                     </ul>
                 </li>
             <?php endif; ?>
+
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link" data-title="Admin">
+                    <i class="bi bi-gear"></i>
+                    <span>Administrador Web</span>
+                </a>
+            </li>
         </ul>
 
         <div class="sidebar-footer">
