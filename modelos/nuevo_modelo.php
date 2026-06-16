@@ -119,16 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
 
     } catch (PDOException $e) {
-
-        if ($e->getCode() == 23000) {
-
-            header("Location: nuevo_modelo.php?error=duplicado");
-            exit();
-
-        } else {
-
-            echo "Error: " . $e->getMessage();
-        }
+        die($e->getMessage());
     }
 }
 
