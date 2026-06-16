@@ -96,6 +96,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         |--------------------------------------------------------------------------
         */
 
+        echo "<pre>";
+        print_r($tallas);
+        echo "</pre>";
+        exit;
+
         foreach ($tallas as $talla) {
 
             $stmtTalla = $conexion->prepare("
