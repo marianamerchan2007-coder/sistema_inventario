@@ -69,13 +69,13 @@ include('../includes/sidebar.php');
                     <input type="text" class="form-control" value="Local" disabled>
                 </div>
 
-                <button type="submit" class="btn btn-primary">
-                    <i class="bi bi-check-circle"></i> Guardar transferencia
-                </button>
-
                 <a href="index.php" class="btn btn-secondary">
                     <i class="bi bi-x-circle"></i> Cancelar
                 </a>
+                
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-check-circle"></i> Guardar transferencia
+                </button>
             </form>
         </div>
 </div>

@@ -245,8 +245,8 @@ include('../includes/sidebar.php');
                     </div>
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Guardar Modelo</button>
                 <a href="index.php" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Guardar Modelo</button>
             </form>
         </div>
     </div>

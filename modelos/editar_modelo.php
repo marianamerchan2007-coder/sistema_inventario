@@ -86,8 +86,8 @@ $tallas = $stmt_tallas->fetchAll(PDO::FETCH_COLUMN);
 
     
                 <div class="pt-2">
-                    <input type="submit" value="Editar modelo" class="btn btn-primary ">
                     <a href="index.php" class="btn btn-secondary">Cancelar</a>
+                    <input type="submit" value="Editar modelo" class="btn btn-primary ">
                 </div>
             </form>
         </div>

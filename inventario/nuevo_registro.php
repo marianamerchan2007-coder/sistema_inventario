@@ -106,13 +106,13 @@ foreach ($sucursales as $s) {
 
             </div>
 
-            <button type="submit" class="btn btn-primary btn-custom">
-                <i class="bi bi-check-circle"></i> Guardar todo
-            </button>
-
             <a href="index.php" class="btn btn-secondary btn-custom">
                 <i class="bi bi-x-circle"></i> Cancelar
             </a>
+            
+            <button type="submit" class="btn btn-primary btn-custom">
+                <i class="bi bi-check-circle"></i> Guardar todo
+            </button>
         </form>
     </div>
 </div>
