@@ -27,7 +27,8 @@ Configuration::instance([
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $nombre = $_POST['txtNombre'] ?? '';
+    $nombre = trim($_POST['txtNombre'] ?? '');
+    $nombre = mb_convert_case($nombre, MB_CASE_TITLE, "UTF-8");
     $descripcion = $_POST['txtDescripcion'] ?? '';
     $origen = $_POST['txtOrigen'] ?? '';
     $tallas = $_POST['txtTalla'] ?? [];
