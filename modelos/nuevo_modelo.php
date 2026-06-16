@@ -96,11 +96,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         |--------------------------------------------------------------------------
         */
 
-        echo "<pre>";
-        print_r($tallas);
-        echo "</pre>";
-        exit;
-
         foreach ($tallas as $talla) {
 
             $stmtTalla = $conexion->prepare("
@@ -124,7 +119,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
 
     } catch (PDOException $e) {
-        die($e->getMessage());
+
+        if ($e->getCode() == 23000) {
+
+            header("Location: nuevo_modelo.php?error=duplicado");
+            exit();
+
+        } else {
+
+            echo "Error: " . $e->getMessage();
+        }
     }
 }
 
