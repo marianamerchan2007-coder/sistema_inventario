@@ -102,14 +102,15 @@
 
     .topbar-nav{
         display: flex;
-        gap: 8px;
+        gap: 6px; /* antes 8px */
     }
 
     .topbar-nav a{
-        padding: 6px 12px;
-        font-size: 13px;
-        border-radius: 8px;
+        padding: 4px 8px;   
+        font-size: 14px;   
+        border-radius: 6px; 
         background: #f5f7fa;
+        white-space: nowrap; 
     }
 
     #sidebar{
