@@ -263,83 +263,23 @@ i {
 
 @media (max-width:768px){
 
-    /* SIDEBAR RESPONSIVE */
     #sidebar{
-        width: 260px;
-        height: 100vh;
-
-        position: fixed;
         top: 0;
         left: -260px;
 
-        background: #dfeaf3;
-
-        padding: 20px;
-
-        display: flex;
-        flex-direction: column;
-
-        overflow-y: auto;              /* 🔥 clave: permite ver todo */
-        -webkit-overflow-scrolling: touch;
+        width: 260px;
+        height: 100vh;
 
         z-index: 1300;
+
         transition: .3s ease;
     }
 
-    /* ABIERTO */
     #sidebar.show{
         left: 0;
     }
 
-    /* NAV ocupa espacio disponible */
-    .sidebar-nav{
-        flex: 1;
-        overflow-y: auto;
-        padding-bottom: 10px;
-    }
-
-    /* FOOTER (SALIR SIEMPRE ABAJO) */
-    .sidebar-footer{
-        margin-top: auto;
-        padding-top: 10px;
-    }
-
-    /* BOTÓN CERRAR */
-    .btn-cerrar-sidebar{
-        display: flex;
-    }
-
-    /* OVERLAY */
-    #overlay{
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,.35);
-
-        opacity: 0;
-        visibility: hidden;
-
-        transition: .3s ease;
-        z-index: 1290;
-    }
-
-    #overlay.show{
-        opacity: 1;
-        visibility: visible;
-    }
-
-    /* LINKS MÁS COMPACTOS */
-    .sidebar-link{
-        padding: 10px 12px;
-        font-size: 13px;
-    }
-
-    .sidebar-count{
-        width: 26px;
-        height: 26px;
-        font-size: 11px;
-    }
 }
-
 
 .btn-cerrar-sidebar{
     width: 45px;
