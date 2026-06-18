@@ -2,6 +2,7 @@
 session_start();
 include("../config/conexion.php"); 
 include("includes/auth.php");
+include("includes/footer.php"); 
 
 require_once '../vendor/autoload.php';
 require_once '../config/cloudinary.php';
@@ -70,5 +71,3 @@ $_SESSION['toast_tipo'] = "success";
 header("Location: productos.php");
 exit();
 ?>
-
-<?php include("includes/footer.php"); ?>
