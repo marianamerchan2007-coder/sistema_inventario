@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 include("../config/conexion.php"); 
 include("includes/auth.php");
@@ -417,4 +418,5 @@ $_SESSION['toast_tipo'] = "success";
 
 header("Location: productos.php");
 exit();
+ob_end_flush();
 ?>
