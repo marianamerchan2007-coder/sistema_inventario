@@ -7,9 +7,8 @@ require_once '../vendor/autoload.php';
 require_once '../config/cloudinary.php';
 
 use Cloudinary\Api\Upload\UploadApi;
-?>
 
-<?php
+
 if(!isset($_GET['id'])){
     header("Location:productos.php");
     exit;
