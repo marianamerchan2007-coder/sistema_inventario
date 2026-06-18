@@ -163,6 +163,34 @@ $totalProductos = $conexion->query($sqlTotal)->fetchColumn();
     z-index: 1300;
 }
 
+/* SIDEBAR RESPONSIVE */
+#sidebar{
+    width: 260px;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: -260px;
+
+    background: #dfeaf3;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;             
+    -webkit-overflow-scrolling: touch;
+
+    z-index: 1300;
+    transition: .3s ease;
+    }
+
+/* ABIERTO */
+#sidebar.show{
+    left: 0;
+}
+
 /* SIDEBAR */
 .sidebar-logo a {
     color: #0c26a9;
