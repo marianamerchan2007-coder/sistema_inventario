@@ -1,9 +1,7 @@
 <?php 
 session_start();
 include("../config/conexion.php"); 
-?>
 
-<?php
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $direccion = $_POST['direccion'];
     $telefono = $_POST['telefono'];
