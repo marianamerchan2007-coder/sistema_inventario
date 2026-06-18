@@ -4,9 +4,9 @@ use Cloudinary\Configuration\Configuration;
 
 Configuration::instance([
     'cloud' => [
-        'cloud_name' => $_ENV['CLOUDINARY_CLOUD_NAME'],
-        'api_key'    => $_ENV['CLOUDINARY_API_KEY'],
-        'api_secret' => $_ENV['CLOUDINARY_API_SECRET'],
+        'cloud_name' => getenv('CLOUDINARY_CLOUD_NAME'),
+        'api_key'    => getenv('CLOUDINARY_API_KEY'),
+        'api_secret' => getenv('CLOUDINARY_API_SECRET'),
     ],
     'url' => [
         'secure' => true
