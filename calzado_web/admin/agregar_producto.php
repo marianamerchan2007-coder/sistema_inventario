@@ -6,9 +6,7 @@ require_once '../vendor/autoload.php';
 require_once '../config/cloudinary.php';
 
 use Cloudinary\Api\Upload\UploadApi;
-?>
 
-<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST"){ //Si se envió el formulario
     $nombre = trim($_POST['nombre_producto']);
     $nombre = mb_convert_case($nombre,MB_CASE_TITLE,"UTF-8");
@@ -247,9 +245,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){ //Si se envió el formulario
     header("Location: productos.php?success=1&producto=" . urlencode($nombre));
     exit();
 }
-?>
 
-<?php 
 include("includes/auth.php");
 include("includes/header.php");
 include("includes/sidebar.php"); 
