@@ -1,6 +1,12 @@
 <?php
 date_default_timezone_set('America/Bogota');
 
+echo "<pre>";
+echo "__DIR__: " . __DIR__ . "<br>";
+echo "autoload: " . __DIR__ . '/../vendor/autoload.php' . "<br>";
+var_dump(file_exists(__DIR__ . '/../vendor/autoload.php'));
+exit;
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
 var_dump(class_exists('Dotenv\\Dotenv'));
