@@ -1,7 +1,10 @@
 <?php
 date_default_timezone_set('America/Bogota');
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+
+var_dump(class_exists('Dotenv\\Dotenv'));
+exit;
 
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
