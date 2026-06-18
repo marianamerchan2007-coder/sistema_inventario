@@ -1,5 +1,4 @@
 <?php
-ob_start();
 session_start();
 include("../config/conexion.php"); 
 include("includes/auth.php");
@@ -8,9 +7,8 @@ require_once '../vendor/autoload.php';
 require_once '../config/cloudinary.php';
 
 use Cloudinary\Api\Upload\UploadApi;
-?>
 
-<?php 
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $id = $_POST['id_producto'];
@@ -418,5 +416,4 @@ $_SESSION['toast_tipo'] = "success";
 
 header("Location: productos.php");
 exit();
-ob_end_flush();
 ?>
