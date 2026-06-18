@@ -146,23 +146,6 @@ $totalProductos = $conexion->query($sqlTotal)->fetchColumn();
     color: #fff;
 }
 
-#sidebar{
-    width: 260px;
-    height: 100vh;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    background: #dfeaf3;
-
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-
-    z-index: 1300;
-}
-
 /* SIDEBAR RESPONSIVE */
 #sidebar{
     width: 260px;
