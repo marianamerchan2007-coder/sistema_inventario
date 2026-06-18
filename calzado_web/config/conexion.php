@@ -7,11 +7,6 @@ $dbname = getenv('ADMIN_DB_NAME');
 $user = getenv('ADMIN_DB_USER');
 $password = getenv('ADMIN_DB_PASSWORD');
 
-echo "<pre>";
-echo "ADMIN_DB_NAME: " . $dbname;
-echo "</pre>";
-exit;
-
 try {
 
     $conexion = new PDO(
