@@ -1,11 +1,6 @@
 <?php
 date_default_timezone_set('America/Bogota');
 
-require_once __DIR__ . '/../vendor/autoload.php';
-
-$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
-$dotenv->load();
-
 $host = $_ENV['DB_HOST'];
 $port = $_ENV['DB_PORT'];
 $dbname = $_ENV['DB_NAME'];
