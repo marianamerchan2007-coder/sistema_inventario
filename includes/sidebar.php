@@ -110,7 +110,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <?php endif; ?>
 
             <li class="sidebar-item">
-                <a href="../calzado_web/" class="sidebar-link" data-title="Admin">
+                <a href="/calzado_web/index.php" class="sidebar-link" data-title="Admin">
                     <i class="bi bi-gear"></i>
                     <span>Administrador Web</span>
                 </a>
