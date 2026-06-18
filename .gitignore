@@ -1,2 +1,3 @@
-calzado_web/.env
+vendor/
 .env
+calzado_web/.env
