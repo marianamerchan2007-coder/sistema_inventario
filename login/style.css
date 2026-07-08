@@ -22,7 +22,6 @@ body::before{
     content:"";
     position:absolute;
     inset:0;
-    background: rgba(0, 0, 0, 0.041);
     backdrop-filter: blur(1px);
     z-index: 0;
 }
