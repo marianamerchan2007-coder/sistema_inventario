@@ -84,7 +84,7 @@ $totalProductos = $conexion->query($sqlTotal)->fetchColumn();
         <hr class="sidebar-divider">
 
     
-        <a href="../../../dashboard/index.php" class="sidebar-link" data-title="Salir">
+        <a href="../../../login/logout.php" class="sidebar-link" data-title="Salir">
             <i class="bi bi-box-arrow-left"></i>
             <span>Salir</span>
         </a>
