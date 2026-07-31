@@ -43,6 +43,7 @@ session_start();
                 <div class="input-group">
                     <i class="fas fa-lock"></i>
                     <input type="password" name="contrasenia" placeholder="Contraseña" required>
+                    <i class="bi bi-eye toggle-password" id="togglePassword"></i>
                 </div>
 
                 <button type="submit">Ingresar</button>
@@ -52,6 +53,27 @@ session_start();
     </div>
 
 </div>
+
+
+<script>
+const password = document.getElementById("contrasenia");
+const toggle = document.getElementById("togglePassword");
+
+toggle.addEventListener("click", () => {
+
+    if(password.type === "password"){
+        password.type = "text";
+        toggle.classList.remove("bi-eye");
+        toggle.classList.add("bi-eye-slash");
+    }else{
+        password.type = "password";
+        toggle.classList.remove("bi-eye-slash");
+        toggle.classList.add("bi-eye");
+    }
+
+});
+</script>
+
 
 </body>
 </html>

@@ -22,6 +22,8 @@ body::before{
     content:"";
     position:absolute;
     inset:0;
+    background: rgba(0,0,0,0.12);
+    backdrop-filter: blur(1px);
     z-index: 0;
 }
 
@@ -131,6 +133,32 @@ body::before{
     font-size: 14px;
     color: rgba(255,255,255,0.8);
     letter-spacing: .5px;
+}
+
+/* deja espacio para el ojo */
+.input-group input{
+    width:100%;
+    padding:14px 45px 14px 45px;
+}
+
+/* icono del ojo */
+.toggle-password{
+    position:absolute;
+    top:50%;
+    right:15px;
+    left:auto !important;
+
+    transform:translateY(-50%);
+    cursor:pointer;
+
+    font-size:18px;
+    color:rgba(255,255,255,.65);
+
+    transition:.25s;
+}
+
+.toggle-password:hover{
+    color:#fff;
 }
 
 /* BOTÓN */
