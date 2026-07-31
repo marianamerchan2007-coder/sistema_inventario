@@ -60,19 +60,17 @@ session_start();
 const password = document.getElementById("contrasenia");
 const toggle = document.getElementById("togglePassword");
 
-toggle.addEventListener("click", () => {
+if (password && toggle) {
+    toggle.addEventListener("click", () => {
 
-    if(password.type === "password"){
-        password.type = "text";
-        toggle.classList.remove("bi-eye");
-        toggle.classList.add("bi-eye-slash");
-    }else{
-        password.type = "password";
-        toggle.classList.remove("bi-eye-slash");
-        toggle.classList.add("bi-eye");
-    }
+        const visible = password.type === "text";
+        password.type = visible ? "password" : "text";
 
-});
+        toggle.classList.toggle("bi-eye");
+        toggle.classList.toggle("bi-eye-slash");
+
+    });
+}
 </script>
 
 
