@@ -136,29 +136,31 @@ body::before{
 }
 
 /* deja espacio para el ojo */
-.input-group input{
-    width:100%;
-    padding:14px 45px 14px 45px;
+/* Icono izquierdo */
+.input-group .icon-left{
+    position:absolute;
+    top:50%;
+    left:15px;
+    transform:translateY(-50%);
+    font-size:16px;
+    color:rgba(255,255,255,.6);
 }
 
-/* icono del ojo */
-.toggle-password{
+/* Ojo */
+.input-group .toggle-password{
     position:absolute;
     top:50%;
     right:15px;
-    left:auto !important;
-
+    left:unset;
     transform:translateY(-50%);
-    cursor:pointer;
-
     font-size:18px;
-    color:rgba(255,255,255,.65);
-
-    transition:.25s;
+    color:rgba(255,255,255,.6);
+    cursor:pointer;
+    z-index:2;
 }
 
-.toggle-password:hover{
-    color:#fff;
+.input-group input{
+    padding:14px 45px 14px 45px;
 }
 
 /* BOTÓN */

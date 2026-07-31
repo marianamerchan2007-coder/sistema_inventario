@@ -39,12 +39,10 @@ session_start();
                 <div class="input-group">
                     <i class="fas fa-user"></i>
                     <input type="text" name="nombre_usuario" placeholder="Usuario" required>
-
-                    <i class="bi bi-eye" style="font-size:40px;color:red;"></i>
                 </div>
 
                 <div class="input-group">
-                    <i class="fas fa-lock"></i>
+                    <i class="fas fa-lock icon-left"></i>
                     <input type="password" name="contrasenia" placeholder="Contraseña" required>
                     <i class="bi bi-eye toggle-password" id="togglePassword"></i>
                 </div>
