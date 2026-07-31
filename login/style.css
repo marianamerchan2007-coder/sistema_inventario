@@ -146,15 +146,16 @@ body::before{
 }
 
 /* Ojo */
-.toggle-password{
-    position:absolute;
-    top:50%;
-    right:15px;
-    left:auto;
-    transform:translateY(-50%);
-    cursor:pointer;
-    font-size:18px;
-    color:rgba(255,255,255,.65);
+#togglePassword{
+    position: absolute !important;
+    top: 50% !important;
+    right: 15px !important;
+    left: auto !important;
+    transform: translateY(-50%) !important;
+    font-size: 18px !important;
+    color: red !important;
+    cursor: pointer !important;
+    z-index: 9999 !important;
 }
 
 .input-group input{
