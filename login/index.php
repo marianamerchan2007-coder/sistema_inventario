@@ -79,3 +79,18 @@ toggle.addEventListener("click", () => {
 </body>
 </html>
 
+
+<style>
+    /* Ojo */
+#togglePassword{
+    position: absolute !important;
+    top: 50% !important;
+    right: 15px !important;
+    left: auto !important;
+    transform: translateY(-50%) !important;
+    font-size: 18px !important;
+    color: red !important;
+    cursor: pointer !important;
+    z-index: 9999 !important;
+}
+</style>
