@@ -94,14 +94,13 @@ body::before{
 
 
 /* ICONO */
-.input-group i{
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: rgba(255,255,255,0.6); 
-    transition: none; 
+.input-group > i:first-child{
+    position:absolute;
+    top:50%;
+    left:15px;
+    transform:translateY(-50%);
+    font-size:16px;
+    color:rgba(255,255,255,.6);
 }
 
 /* INPUT */
@@ -147,16 +146,15 @@ body::before{
 }
 
 /* Ojo */
-.input-group .toggle-password{
+.toggle-password{
     position:absolute;
     top:50%;
     right:15px;
-    left:unset;
+    left:auto;
     transform:translateY(-50%);
-    font-size:18px;
-    color:rgba(255,255,255,.6);
     cursor:pointer;
-    z-index:2;
+    font-size:18px;
+    color:rgba(255,255,255,.65);
 }
 
 .input-group input{
