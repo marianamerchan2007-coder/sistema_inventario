@@ -43,7 +43,7 @@ session_start();
 
                 <div class="input-group">
                     <i class="fas fa-lock icon-left"></i>
-                    <input type="password" name="contrasenia" placeholder="Contraseña" required>
+                    <input type="password" id="contrasenia" name="contrasenia" placeholder="Contraseña" required>
                     <i class="bi bi-eye toggle-password" id="togglePassword"></i>
                 </div>
 
