@@ -175,8 +175,43 @@ include('../includes/sidebar.php');
                     <div class="tallas-grid mt-2 mb-4" id="grupoTallas">
 
                         <div class="talla-item">
+                            <input type="checkbox" name="txtTalla[]" value="22" id="t22">
+                            <label for="t22">22</label>
+                        </div>
+
+                        <div class="talla-item">
+                            <input type="checkbox" name="txtTalla[]" value="23" id="t23">
+                            <label for="t23">23</label>
+                        </div>
+
+                        <div class="talla-item">
+                            <input type="checkbox" name="txtTalla[]" value="24" id="t24">
+                            <label for="t24">24</label>
+                        </div>
+
+                        <div class="talla-item">
+                            <input type="checkbox" name="txtTalla[]" value="25" id="t25">
+                            <label for="t25">25</label>
+                        </div>
+
+                        <div class="talla-item">
+                            <input type="checkbox" name="txtTalla[]" value="26" id="t26">
+                            <label for="t26">26</label>
+                        </div>
+
+                        <div class="talla-item">
+                            <input type="checkbox" name="txtTalla[]" value="27" id="t27">
+                            <label for="t27">27</label>
+                        </div>
+
+                        <div class="talla-item">
                             <input type="checkbox" name="txtTalla[]" value="28" id="t28">
                             <label for="t28">28</label>
+                        </div>
+
+                        <div class="talla-item">
+                            <input type="checkbox" name="txtTalla[]" value="29" id="t29">
+                            <label for="t29">29</label>
                         </div>
 
                         <div class="talla-item">
@@ -185,8 +220,18 @@ include('../includes/sidebar.php');
                         </div>
 
                         <div class="talla-item">
+                            <input type="checkbox" name="txtTalla[]" value="31" id="t31">
+                            <label for="t31">31</label>
+                        </div>
+
+                        <div class="talla-item">
                             <input type="checkbox" name="txtTalla[]" value="32" id="t32">
                             <label for="t32">32</label>
+                        </div>
+
+                        <div class="talla-item">
+                            <input type="checkbox" name="txtTalla[]" value="33" id="t33">
+                            <label for="t33">33</label>
                         </div>
 
                         <div class="talla-item">
@@ -225,8 +270,18 @@ include('../includes/sidebar.php');
                         </div>
 
                         <div class="talla-item">
+                            <input type="checkbox" name="txtTalla[]" value="41" id="t41">
+                            <label for="t41">41</label>
+                        </div>
+
+                        <div class="talla-item">
                             <input type="checkbox" name="txtTalla[]" value="42" id="t42">
                             <label for="t42">42</label>
+                        </div>
+
+                        <div class="talla-item">
+                            <input type="checkbox" name="txtTalla[]" value="43" id="t43">
+                            <label for="t43">43</label>
                         </div>
 
                         <div class="talla-item">

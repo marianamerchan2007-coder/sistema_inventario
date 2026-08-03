@@ -65,7 +65,10 @@ $tallas = $stmt_tallas->fetchAll(PDO::FETCH_COLUMN);
                     <label class="form-label">Seleccione las tallas</label>
                     <div class="tallas-grid mt-2 mb-4">
                         <?php
-                        $todas = [28,30,32,34,35,36,37,38,39,40,42,44];
+                        $todas = [
+                            22,23,24,25,26,27,28,29,30,31,32,33,
+                            34,35,36,37,38,39,40,41,42,43,44
+                        ];
 
                         foreach ($todas as $talla) {
                         ?>
