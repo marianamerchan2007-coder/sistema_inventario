@@ -4,6 +4,7 @@ include("../config/conexion.php");
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $direccion = $_POST['direccion'];
+    $ubicacion = $_POST['ubicacion'];
     $telefono = $_POST['telefono'];
     $whatsapp = $_POST['whatsapp'];
     $facebook = $_POST['facebook'];
@@ -19,6 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if($existe > 0){
         $sqlUpdate = "UPDATE info_contacto SET
         direccion = :direccion,
+        ubicacion = :ubicacion,
         telefono = :telefono,
         whatsapp = :whatsapp,
         facebook = :facebook,
@@ -29,6 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         //vincular variables
         $stmtUpdate->bindParam(':direccion', $direccion);
+        $stmtUpdate->bindParam(':ubicacion', $ubicacion);
         $stmtUpdate->bindParam(':telefono', $telefono);
         $stmtUpdate->bindParam(':whatsapp', $whatsapp);
         $stmtUpdate->bindParam(':facebook', $facebook);
@@ -40,12 +43,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     //si no existe INSERT
     else{
-        $sqlInsert = "INSERT INTO info_contacto(direccion, telefono, whatsapp, facebook, correo, horarios)
-        VALUES (:direccion, :telefono, :whatsapp, :facebook, :correo, :horarios)";
+        $sqlInsert = "INSERT INTO info_contacto(direccion, ubicacion, telefono, whatsapp, facebook, correo, horarios)
+        VALUES (:direccion, :ubicacion, :telefono, :whatsapp, :facebook, :correo, :horarios)";
 
         $stmtInsert = $conexion->prepare($sqlInsert);
 
         $stmtInsert->bindParam(':direccion', $direccion);
+        $stmtInsert->bindParam(':ubicacion', $ubicacion);
         $stmtInsert->bindParam(':telefono', $telefono);
         $stmtInsert->bindParam(':whatsapp', $whatsapp);
         $stmtInsert->bindParam(':facebook', $facebook);
@@ -62,7 +66,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     exit;
 }
 
-$sql = "SELECT telefono, whatsapp, facebook, direccion, correo, horarios FROM info_contacto";
+$sql = "SELECT telefono, whatsapp, facebook, direccion, ubicacion, correo, horarios FROM info_contacto";
 $stmt = $conexion->query($sql);
 $info = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -70,6 +74,7 @@ if(!$info){
 
     $info = [
         'direccion' => '',
+        'ubicacion' => '',
         'telefono' => '',
         'whatsapp' => '',
         'facebook' => '',
@@ -92,8 +97,13 @@ include("includes/sidebar.php");
                 <form action="configuracion.php" method="post">
 
                     <div class="mb-3">
-                        <label for="direccion">Ubicación</label>
+                        <label for="direccion">Dirección</label>
                         <input type="text" id="direccion" name="direccion" class="form-control" value="<?= $info['direccion']; ?>">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="ubicacion">Ubicación google</label>
+                        <input type="text" id="ubicacion" name="ubicacion" class="form-control" value="<?= $info['ubicacion']; ?>">
                     </div>
 
                     <div class="row">
